@@ -16,8 +16,8 @@ router.post("/refresh", userController.refreshAccessToken);
 // ============================================
 router.get("/me", authMiddleware, userController.getCurrentUser);
 router.post("/", authMiddleware, userController.createUser);
+router.get("/", authMiddleware, userController.getAllUsers);
 router.post("/logout", authMiddleware, userController.logoutUser);
-router.get("/", authMiddleware, adminAuth, userController.getAllUsers);
 router.get("/:id", authMiddleware, adminAuth, userController.getUserById);
 router.put("/:id", authMiddleware, adminAuth, userController.updateUser);
 router.delete("/:id", authMiddleware, adminAuth, userController.deleteUser);
